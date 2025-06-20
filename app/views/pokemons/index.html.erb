@@ -1,23 +1,13 @@
-<h1>Pokédex</h1>
+<header class="header">
+  <h1>Pokédex</h1>
 
-<ul>
-<li>link for trainers</li>
-<li>link for random pokemon</li>
-<li>search bar for pokemon</li>
-<li>list of pokemon cards</li>
-</ul>
+  <%= link_to "Trainers", "" %>
+  <%= link_to "Random Pokemon", "" %>
+  <b>search bar for pokemon</b>
+</header>
 
-<!--
-@pokemons.each do ||
-  - present pokemon card
-end
--->
-
-<% @pokemons.each do |pokemon| %>
-  <div>
-    <%= cl_image_tag pokemon.photo.key %>
-    <%= pokemon.name.capitalize %>
-    <%= pokemon.element_type.capitalize %>
-  </div>
-
-<% end %>
+<div class="grid">
+  <% @pokemons.each do |pokemon| %>
+    <%= render pokemon %>
+  <% end %>
+</div>
