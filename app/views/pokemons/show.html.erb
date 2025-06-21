@@ -4,13 +4,17 @@
 
 <div class="two-columns">
   <div>
-    text
-    <br>
+    <p>You hear a rustle in the tall grass...A wild Pokémon appears!</p>
     <%= render @pokemon %>
   </div>
   <div>
-    text
-    <br>
-    fornm to catch pokemon
+    <h2>Do you dare to catch this Pokémon?</h2>
+
+    <%= simple_form_for [@pokemon, @pokeball] do |f| %>
+      <%= f.association :trainer %>
+      <%= f.input :location, label: "Where are you?" %>
+      <%= f.input :caught_on, html5: true, label: "When?" %>
+      <%= f.submit "Catch", class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
