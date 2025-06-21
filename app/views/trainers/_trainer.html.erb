@@ -1,0 +1,5 @@
+<div class="trainer-card">
+    <%= cl_image_tag trainer.photo.key %>
+    <h2><%= link_to trainer.name.capitalize, trainer_path(trainer) %></h2>
+    <%= trainer.age %>
+</div>
